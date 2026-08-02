@@ -8,10 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/users", userRoutes);
-
 app.get("/", (req, res) => {
-    res.json({ message: "Backend API is running!" });
+  res.json({ message: "Backend API is running!" });
 });
+
+app.use("/api/users", userRoutes);
 
 module.exports = app;
